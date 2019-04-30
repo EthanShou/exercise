@@ -17,28 +17,35 @@
       <change afterPath="$PROJECT_DIR$/../annotation/src/test/java/TestAnnotation.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/constant/ArticleConsts.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/constant/BaseConsts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/constant/BrowseEnum.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/constant/DateEnum.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/constant/EsConsts.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/constant/OperationEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/elasticsearch/ArticleRSDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/elasticsearch/ArticleEsDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/elasticsearch/HelperEsDao.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/elasticsearch/impl/ArticleESDaoImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/elasticsearch/impl/HelperEsDaoImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/mysql/ArticleMapper.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/mysql/HelpMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/redis/RedisCacheDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/dao/redis/impl/RedisCacheDaoImpl.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/domain/DO/ArticleDO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/domain/DO/CategoryDO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/domain/DO/LoveDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/domain/DTO/SubscribeDTO.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/entity/UserInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/service/TblToutiaoUserInfoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/service/BrowseService.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/application-test.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/ArticleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapper/HelperMapper.xml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/test/java/com/utan/article/GeneratorServiceEntity.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../gene-zhao-shared_project-master/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/utan/article/service/impl/BrowseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/utan/article/service/impl/BrowseServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,27 +57,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/HelperMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="167">
-              <caret line="54" column="44" selection-start-line="54" selection-start-column="40" selection-end-line="54" selection-end-column="44" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/dao/redis/RedisCacheDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-974">
-              <caret line="46" column="35" lean-forward="true" selection-start-line="46" selection-start-column="35" selection-end-line="46" selection-end-column="35" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/dao/redis/impl/RedisCacheDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,21 +85,55 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/service/impl/BrowseServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+            <state relative-caret-position="306">
+              <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#540#541#0" expanded="true" />
-                <element signature="e#567#568#0" expanded="true" />
                 <element signature="e#639#640#0" expanded="true" />
                 <element signature="e#666#667#0" expanded="true" />
                 <element signature="e#757#758#0" expanded="true" />
                 <element signature="e#784#785#0" expanded="true" />
                 <element signature="e#891#892#0" expanded="true" />
                 <element signature="e#918#919#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/exception/BrowseException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/exception/ErrorInfoException.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/result/ResultInfoEnum.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="186">
+              <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+              <folding>
+                <element signature="e#1057#1058#0" expanded="true" />
+                <element signature="e#1084#1085#0" expanded="true" />
+                <element signature="e#1114#1115#0" expanded="true" />
+                <element signature="e#1140#1141#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -164,26 +184,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/entity/UserInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4432">
-              <caret line="307" selection-start-line="307" selection-end-line="307" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -194,7 +202,7 @@
     </findStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -228,8 +236,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/utan/article/domain/DTO/BrowseDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/utan/article/domain/DTO/SubscribeDTO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/utan/article/service/BrowseService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/utan/article/service/impl/BrowseServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/utan/article/constant/BrowseEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/utan/article/result/ResultInfoEnum.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/utan/article/exception/ErrorInfoException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/utan/article/service/impl/BrowseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/utan/article/exception/BrowseException.java" />
       </list>
     </option>
   </component>
@@ -246,9 +257,10 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="-6" />
-    <option name="width" value="2271" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
     <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -331,29 +343,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utan" type="462c0819:PsiDirectoryNode" />
               <item name="article" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="article" type="b2602c69:ProjectViewProjectNode" />
-              <item name="article" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utan" type="462c0819:PsiDirectoryNode" />
-              <item name="article" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-              <item name="redis" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="article" type="b2602c69:ProjectViewProjectNode" />
-              <item name="article" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utan" type="462c0819:PsiDirectoryNode" />
-              <item name="article" type="462c0819:PsiDirectoryNode" />
               <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -375,8 +364,7 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utan" type="462c0819:PsiDirectoryNode" />
               <item name="article" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="DTO" type="462c0819:PsiDirectoryNode" />
+              <item name="entity" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="article" type="b2602c69:ProjectViewProjectNode" />
@@ -386,7 +374,17 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utan" type="462c0819:PsiDirectoryNode" />
               <item name="article" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
+              <item name="exception" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="article" type="b2602c69:ProjectViewProjectNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utan" type="462c0819:PsiDirectoryNode" />
+              <item name="article" type="462c0819:PsiDirectoryNode" />
+              <item name="result" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="article" type="b2602c69:ProjectViewProjectNode" />
@@ -415,14 +413,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="article" type="b2602c69:ProjectViewProjectNode" />
-              <item name="article" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="article" type="b2602c69:ProjectViewProjectNode" />
@@ -463,7 +453,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556619631950" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1556629172836" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Facets" />
@@ -472,6 +462,9 @@
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.utan.article.exception" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\workspace\article\src\main\resources" />
     </key>
@@ -521,7 +514,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1556517996446</updated>
-      <workItem from="1556518001970" duration="29868000" />
+      <workItem from="1556518001970" duration="34779000" />
     </task>
     <servers />
   </component>
@@ -558,10 +551,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29868000" />
+    <option name="totallyTimeSpent" value="34779000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="2271" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Designer" />
@@ -570,10 +563,10 @@
       <window_info id="UI Designer" />
       <window_info id="Favorites" side_tool="true" />
       <window_info id="Web" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15097772" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17811158" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32963374" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" />
@@ -582,7 +575,7 @@
       <window_info anchor="bottom" id="Messages" weight="0.32963374" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32963374" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32963374" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39955604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1009,20 +1002,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/result/ResultInfoEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="e#1057#1058#0" expanded="true" />
+            <element signature="e#1084#1085#0" expanded="true" />
+            <element signature="e#1114#1115#0" expanded="true" />
+            <element signature="e#1140#1141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/service/impl/BrowseServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
+        <state relative-caret-position="306">
+          <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#540#541#0" expanded="true" />
-            <element signature="e#567#568#0" expanded="true" />
             <element signature="e#639#640#0" expanded="true" />
             <element signature="e#666#667#0" expanded="true" />
             <element signature="e#757#758#0" expanded="true" />
             <element signature="e#784#785#0" expanded="true" />
             <element signature="e#891#892#0" expanded="true" />
             <element signature="e#918#919#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/exception/BrowseException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/utan/article/exception/ErrorInfoException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="30" column="1" lean-forward="true" selection-start-line="30" selection-start-column="1" selection-end-line="30" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
