@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.utan.article.dao.mysql.HelperMapper">
+    <resultMap id="CategoryResultMap" type="com.utan.article.domain.DO.CategoryDO">
+        <constructor>
+            <idArg column="id" jdbcType="INTEGER" javaType="java.lang.String"/>
+            <arg column="category" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="alias" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="show_type" jdbcType="TINYINT" javaType="java.lang.String"/>
+            <arg column="pic" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="prefix_extend" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        </constructor>
+    </resultMap>
+
+    <resultMap id="LoveResultMap" type="com.utan.article.domain.DO.LoveDO">
+        <constructor>
+            <arg column="assist" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="weight" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+        </constructor>
+    </resultMap>
+
+    <select id="selectLoveNumByArticleId" parameterType="java.lang.Long" resultMap="LoveResultMap">
+      SELECT assist, weight
+      FROM db2_utan_cs.crawler_data
+      WHERE uniquekey = #{id,jdbcType=BIGINT}
+    </select>
+
+    <update id="updateLoveNumByArticleId">
+      UPDATE db2_utan_cs.crawler_data
+      SET assist = #{loveNum,jdbcType=INTEGER}
+      WHERE uniquekey = #{articleId,jdbcType=BIGINT}
+    </update>
+
+    <select id="selectCommentNumByArticleId" parameterType="java.lang.Long" resultType="java.lang.Integer">
+      SELECT COUNT(1)
+      FROM utan_mobile.headline_post
+      WHERE status = 1 AND headline_id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectCategoryByAppName" parameterType="java.lang.String" resultMap="CategoryResultMap">
+      SELECT id, category, alias, show_type, pic, prefix_extend
+      FROM db2_utan_cs.tbl_toutiao_category_sort
+      WHERE status = 0 AND appname = #{appName,jdbcType=VARCHAR}
+      ORDER BY indexsort ASC
+    </select>
+
+    <select id="selectRecommendByArticleId" parameterType="java.lang.Long" resultType="java.lang.String">
+      SELECT recommend_uniquekeys
+      FROM db2_utan_cs.article_correlation_recommend
+      WHERE uniquekey = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectAvatarByAuthorId" parameterType="java.lang.Integer" resultType="java.lang.String">
+      SELECT avatar
+      FROM db2_utan_toutiao.tbl_toutiao_user_info
+      WHERE user_id = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectSubscribeAuthorIdByUserId" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+      SELECT author_id
+      FROM db2_utan_toutiao.tbl_toutiao_user_subscribe_author
+      WHERE userid = #{id,jdbcType=INTEGER} AND status = 0
+    </select>
+
+    <select id="selectHotArticleCategory" resultType="java.lang.String">
+      SELECT utanTag
+      FROM db2_utan_toutiao.tbl_user_tag_recommend
+      WHERE isvideo = 0
+    </select>
+
+    <select id="selectHotArticleCategoryByLabel" parameterType="java.lang.String" resultType="java.lang.String">
+      SELECT utanTag
+      FROM db2_utan_toutiao.tbl_user_tag_recommend
+      WHERE tagName = #{label,jdbcType=VARCHAR} AND isvideo = 0
+    </select>
+
+    <select id="selectHotVideoCategory" resultType="java.lang.String">
+      SELECT utanTag
+      FROM db2_utan_toutiao.tbl_user_tag_recommend
+      WHERE isvideo = 1
+    </select>
+
+    <select id="selectHotVideoCategoryByLabel" parameterType="java.lang.String" resultType="java.lang.String">
+      SELECT utanTag
+      FROM db2_utan_toutiao.tbl_user_tag_recommend
+      WHERE tagName = #{label,jdbcType=VARCHAR} AND isvideo = 1
+    </select>
+
+    <update id="updateAuthorNameByAuthorId">
+        UPDATE db2_utan_toutiao.tbl_toutiao_user_info
+        SET realname = #{authorName,jdbcType=VARCHAR}
+        WHERE user_id = #{authorId,jdbcType=INTEGER}
+    </update>
+</mapper>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.utan.article.dao.mysql.ArticleMapper">
+    <insert id="insert" parameterType="com.utan.article.domain.DO.ArticleDO">
+        <selectKey resultType="java.lang.Long" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        INSERT INTO db2_utan_cs.crawler_data (uniquekey, title, titlesub,
+        heightwidth, `time`, tag,
+        utantag, netorg,
+        createtime, `year`, `month`,
+        `day`, flag, state, extend,
+        updatetime, weight,
+        authorid, extendtags,
+        videourl, isvideo, publishtime,
+        contextencode, context, picurlthumbnail,
+        picurl, videocontext)
+        VALUES (#{uniquekey,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, #{titlesub,jdbcType=VARCHAR},
+        #{heightwidth,jdbcType=VARCHAR}, #{time,jdbcType=BIGINT}, #{tag,jdbcType=VARCHAR},
+        #{utantag,jdbcType=VARCHAR}, #{netorg,jdbcType=VARCHAR},
+        #{createtime,jdbcType=BIGINT}, #{year,jdbcType=INTEGER}, #{month,jdbcType=INTEGER},
+        #{day,jdbcType=INTEGER}, #{flag,jdbcType=INTEGER}, #{state,jdbcType=INTEGER}, #{extend,jdbcType=VARCHAR},
+        #{updatetime,jdbcType=BIGINT}, #{weight,jdbcType=INTEGER},
+        #{authorid,jdbcType=INTEGER}, #{extendtags,jdbcType=VARCHAR},
+        #{videourl,jdbcType=VARCHAR}, #{isvideo,jdbcType=TINYINT}, #{publishtime,jdbcType=BIGINT},
+        #{contextencode,jdbcType=LONGVARCHAR}, #{context,jdbcType=LONGVARCHAR}, #{picurlthumbnail,jdbcType=LONGVARCHAR},
+        #{picurl,jdbcType=LONGVARCHAR}, #{videocontext,jdbcType=LONGVARCHAR})
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.utan.article.domain.DO.ArticleDO">
+        UPDATE db2_utan_cs.crawler_data
+        <set>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="titlesub != null">
+                titlesub = #{titlesub,jdbcType=VARCHAR},
+            </if>
+            <if test="heightwidth != null">
+                heightwidth = #{heightwidth,jdbcType=VARCHAR},
+            </if>
+            <if test="time != null">
+                `time` = #{time,jdbcType=BIGINT},
+            </if>
+            <if test="tag != null">
+                tag = #{tag,jdbcType=VARCHAR},
+            </if>
+            <if test="utantag != null">
+                utantag = #{utantag,jdbcType=VARCHAR},
+            </if>
+            <if test="netorg != null">
+                netorg = #{netorg,jdbcType=VARCHAR},
+            </if>
+            <if test="createtime != null">
+                createtime = #{createtime,jdbcType=BIGINT},
+            </if>
+            <if test="year != null">
+                `year` = #{year,jdbcType=INTEGER},
+            </if>
+            <if test="month != null">
+                `month` = #{month,jdbcType=INTEGER},
+            </if>
+            <if test="day != null">
+                `day` = #{day,jdbcType=INTEGER},
+            </if>
+            <if test="flag != null">
+                flag = #{flag,jdbcType=INTEGER},
+            </if>
+            <if test="state != null">
+                state = #{state,jdbcType=INTEGER},
+            </if>
+            <if test="extend != null">
+                extend = #{extend,jdbcType=VARCHAR},
+            </if>
+            <if test="updatetime != null">
+                updatetime = #{updatetime,jdbcType=BIGINT},
+            </if>
+            <if test="weight != null">
+                weight = #{weight,jdbcType=INTEGER},
+            </if>
+            <if test="authorid != null">
+                authorid = #{authorid,jdbcType=INTEGER},
+            </if>
+            <if test="extendtags != null">
+                extendtags = #{extendtags,jdbcType=VARCHAR},
+            </if>
+            <if test="videourl != null">
+                videourl = #{videourl,jdbcType=VARCHAR},
+            </if>
+            <if test="isvideo != null">
+                isvideo = #{isvideo,jdbcType=TINYINT},
+            </if>
+            <if test="publishtime != null">
+                publishtime = #{publishtime,jdbcType=BIGINT},
+            </if>
+            <if test="contextencode != null">
+                contextencode = #{contextencode,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="context != null">
+                context = #{context,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="picurlthumbnail != null">
+                picurlthumbnail = #{picurlthumbnail,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="picurl != null">
+                picurl = #{picurl,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="videocontext != null">
+                videocontext = #{videocontext,jdbcType=LONGVARCHAR},
+            </if>
+        </set>
+        WHERE uniquekey = #{uniquekey,jdbcType=BIGINT}
+    </update>
+
+    <update id="updateLabelByPrimaryKey">
+        UPDATE db2_utan_cs.crawler_data
+        SET extendtags = #{label,jdbcType=VARCHAR}
+        WHERE uniquekey = #{id,jdbcType=BIGINT}
+    </update>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        DELETE FROM db2_utan_cs.crawler_data
+        WHERE uniquekey = #{id,jdbcType=BIGINT}
+--         WHERE uniquekey = #{id,jdbcType=BIGINT}
+    </delete>
+
+    <select id="selectAuthorIdByPrimaryKey" resultType="java.lang.Integer">
+        SELECT authorid
+        FROM db2_utan_cs.crawler_data
+        WHERE uniquekey = #{id,jdbcType=BIGINT}
+    </select>
+
+    <select id="selectPrimaryKeysByTagAndViewDescToday" resultType="java.lang.Long">
+        SELECT uniquekey
+        FROM db2_utan_cs.crawler_data
+        WHERE `year` = #{year,jdbcType=INTEGER} AND `month` = #{month,jdbcType=INTEGER} AND `day` = #{day,jdbcType=INTEGER}
+        <if test="tag != null">
+            AND tag = #{tag,jdbcType=VARCHAR}
+        </if>
+        <if test="tagSet != null and tagSet.size() > 0">
+            AND tag NOT IN
+            <foreach collection="tagSet" item="tag" index="index" open="(" separator="," close=")">
+                #{tag}
+            </foreach>
+        </if>
+        AND isvideo = #{isVideo,jdbcType=TINYINT}
+        AND state = 0 AND flag = 0
+        ORDER BY assist DESC, createtime DESC LIMIT #{size}
+    </select>
+
+    <select id="selectPrimaryKeysByTagAndViewDescPeriod" resultType="java.lang.Long">
+        SELECT uniquekey
+        FROM db2_utan_cs.crawler_data
+        WHERE createtime BETWEEN #{fromTime} AND #{toTime}
+        <if test="tag != null">
+            AND tag = #{tag,jdbcType=VARCHAR}
+        </if>
+        <if test="tagSet != null and tagSet.size() > 0">
+            AND tag NOT IN
+            <foreach collection="tagSet" item="tag" index="index" open="(" separator="," close=")">
+                #{tag}
+            </foreach>
+        </if>
+        AND isvideo = #{isVideo,jdbcType=TINYINT}
+        AND state = 0 AND flag = 0
+        <if test="uniqueKeyList != null and uniqueKeyList.size() > 0">
+            AND uniquekey NOT IN
+            <foreach collection="uniqueKeyList" item="uniqueKey" index="index" open="(" separator="," close=")">
+                #{uniqueKey}
+            </foreach>
+        </if>
+        ORDER BY assist DESC, createtime DESC LIMIT #{size}
+    </select>
+
+    <update id="updateAuthorNameByAuthorId">
+        UPDATE db2_utan_cs.crawler_data
+        SET netorg = #{authorName,jdbcType=VARCHAR}
+        WHERE authorid = #{authorId,jdbcType=INTEGER}
+    </update>
+</mapper>
+
+
+
+
+
+
+
+

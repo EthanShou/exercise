@@ -1,0 +1,21 @@
+server:
+  port: 5515
+
+elasticsearch:
+  cluster-name: utan-es
+  cluster-nodes: 192.168.1.111:9300
+
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.1.110:3306/?useUnicode=true&amp;characterEncoding=UTF-8
+    data-username: root
+    data-password: 123
+
+  redis:
+    host: 192.168.1.215
+    port: 6379
+    database: 2
+
+myba
